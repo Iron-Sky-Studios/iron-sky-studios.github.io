@@ -10,8 +10,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Perform Build
+  deploy:
+    name: Deploy landing page to gh-pages
     runs-on: ubuntu-latest
 
     strategy:
@@ -37,10 +37,6 @@ jobs:
         working-directory: ./app
         run: npm ci --prefer-offline
 
-  deploy:
-    needs: build
-
-    steps:
-      - name: Build
+      - name: Build & Deploy
         working-directory: ./app
         run: npm run deploy
