@@ -1,5 +1,5 @@
-name: Deply
-run-name: Build ${{ github.repository }}
+name: Build & Deploy
+run-name: Build & Deploy ${{ github.repository }}
 
 on:
   push:
@@ -29,6 +29,7 @@ jobs:
 
       - name: Set up Node ${{ matrix.node-version }}
         uses: actions/setup-node@bea5baf987ba7aa777a8a0b4ace377a21c45c381 # v3.7.0
+        working-directory: ./app
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
