@@ -1,0 +1,159 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", system-ui;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    height: 100%;
+}
+
+.background--image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url("/static/images/background.jpg");
+}
+
+.background--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: rgba(40, 37, 54, 0.4);
+}
+
+.hero {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    z-index: 100;
+    max-width: 950px;
+    margin-bottom: 10rem;
+}
+
+.hero__title {
+    font-weight: 500;
+    font-size: 5.5rem;
+    margin-bottom: 3rem;
+}
+
+.hero__body {
+    margin-bottom: 4.5rem;
+    font-size: 1.8rem;
+}
+
+.hero__cta {
+    display: flex;
+}
+
+.hero__cta > * + * {
+    margin-left: 3rem;
+}
+
+.btn--demo,
+.btn--purchase {
+    cursor: pointer;
+    padding: 1.3rem 2rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: 0 0;
+    text-transform: uppercase;
+    transform: skewX(-7deg);
+    border-radius: 3px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    backface-visibility: hidden;
+}
+
+.btn--demo {
+    background-color: #d31c3e;
+}
+
+.btn--purchase {
+    background-color: #fff;
+}
+
+.btn--demo__text,
+.btn--purchase__text {
+    z-index: 1;
+    transition: all 0.3s;;
+}
+
+.btn--demo__text {
+    color: #fff;
+}
+
+.btn--purchase__text {
+    color: #333;
+}
+
+.btn--demo::before,
+.btn--purchase::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5rem;
+    bottom: 0;
+    right: 0;
+    border-right: 5rem solid transparent;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+}
+
+.btn--demo::before {
+    border-bottom: 5rem solid #fff;
+}
+
+.btn--purchase::before {
+    border-bottom: 5rem solid #d31c3e;
+}
+
+.btn--demo:hover::before,
+.btn--purchase:hover::before {
+    transform: translateX(24%);
+}
+
+.btn--demo:hover .btn--demo__text {
+    color: #333;
+}
+
+.btn--purchase:hover .btn--purchase__text {
+    color: #fff;
+}
