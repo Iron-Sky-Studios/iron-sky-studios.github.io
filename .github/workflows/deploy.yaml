@@ -36,9 +36,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci --prefer-offline
 
-  # Deploy job
   deploy:
-    # Add a dependency to the build job
     needs: build
 
     steps:
