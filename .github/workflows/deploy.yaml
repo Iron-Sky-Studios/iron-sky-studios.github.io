@@ -34,6 +34,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
+        working-directory: ./app
         run: npm ci --prefer-offline
 
   deploy:
@@ -41,4 +42,5 @@ jobs:
 
     steps:
       - name: Build
+      working-directory: ./app
       run: npm run deploy
