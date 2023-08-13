@@ -38,7 +38,12 @@ jobs:
       - name: Build & Deploy
         working-directory: ./app
         run: |
-          git config --global user.name "seyLu-bot"
-          git config --global user.email "141534257+seyLu-bot@users.noreply.github.com"
-          git remote add origin https://https://github.com/Iron-Sky-Studios/iron-sky-studios.github.io.git
+          git config --global '${user_name}'
+          git config --global user.email '${user_email}'
+          git remote set-url origin https://${github_token}@github.com/${github_repository}
           npm run deploy
+        env:
+          user_name: 'seyLu-bot'
+          user_email: '141534257+seyLu-bot@users.noreply.github.com'
+          github_token: ${{ github.SEYLUBOT_PAT }}
+          github_repository: ${{ github.repository }}
