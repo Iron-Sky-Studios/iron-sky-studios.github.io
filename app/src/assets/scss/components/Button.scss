@@ -39,9 +39,9 @@ $black: #333;
       transform: translateX(24%);
     }
 
-    &__text,
     &__text {
       z-index: 1;
+      font-weight: 700;
       transition: all 0.3s;
     }
   }
@@ -58,7 +58,7 @@ $black: #333;
     }
 
     &__text {
-      color: $black;
+      color: $white;
     }
   }
 
