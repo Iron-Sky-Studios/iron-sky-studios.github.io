@@ -1,5 +1,7 @@
-import Background from './components/Background';
-import Hero from './components/Hero';
+import "./assets/scss/App.scss";
+
+import Background from "./components/Background";
+import Hero from "./components/Hero";
 
 function App() {
   return (

@@ -1,0 +1,80 @@
+$red: #d31c3e;
+$white: #fff;
+$black: #333;
+
+.btn {
+  &--demo,
+  &--purchase {
+    cursor: pointer;
+    padding: 1.3rem 2rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: 0 0;
+    text-transform: uppercase;
+    transform: skewX(-7deg);
+    border-radius: 3px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    backface-visibility: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5rem;
+      bottom: 0;
+      right: 0;
+      border-right: 5rem solid transparent;
+      transform: translateX(-100%);
+      transition: all 0.3s;
+    }
+
+    &:hover::before {
+      transform: translateX(24%);
+    }
+
+    &__text,
+    &__text {
+      z-index: 1;
+      transition: all 0.3s;
+    }
+  }
+
+  &--demo {
+    background-color: $red;
+
+    &::before {
+      border-bottom: 5rem solid $white;
+    }
+
+    &:hover &__text {
+      color: $black;
+    }
+
+    &__text {
+      color: $black;
+    }
+  }
+
+  &--purchase {
+    background-color: $white;
+
+    &::before {
+      border-bottom: 5rem solid $red;
+    }
+
+    &:hover &__text {
+      color: $white;
+    }
+
+    &__text {
+      color: $black;
+    }
+  }
+}
